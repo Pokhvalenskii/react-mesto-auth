@@ -14,7 +14,7 @@ import ProtectedRoute from './ProtectedRoute.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import PopupResponse from './PopupResponse.js';
-import * as auth from './Auth.js';
+import * as auth from '../utils/auth.js';
 
 function App() {
   const history = useHistory();
@@ -33,9 +33,10 @@ function App() {
 
   useEffect(() => {
     Promise.all([api.getInitialUser(), api.getInitialCards()])
-    .then(value => {
-      setCurrentUser(value[0])
-      setCards(value[1])
+    .then(res => {
+      const [userData, cards] = res;
+      setCurrentUser(userData);
+      setCards(cards);
     }).catch(error => console.log(`${error}`));
   }, []);
 
@@ -131,7 +132,7 @@ function App() {
         // console.log('RES: ', res)
         setUserEmail(email);
         setIsSuccessPopup(true)
-      })
+      }).catch(error => console.log(`${error}`))
   }
   function handleAuthorize(email, password) {
     return auth.authorize(email, password)
@@ -146,11 +147,6 @@ function App() {
       })
   }
 
-
-  // function handleLoginError() {
-  //   setIsLoginErrorPopup(true);
-  // }
-
   const checkLoggedIn = useCallback(() => {
     const jwt = localStorage.getItem('jwt')
     if(jwt) {
@@ -159,7 +155,7 @@ function App() {
           setLoggedIn(true);
           setUserEmail(res.data.email)
           history.push('/');
-        })
+        }).catch(error => console.log(`${error}`))
     }
   }, [history])
 
