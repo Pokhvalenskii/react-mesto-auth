@@ -1,0 +1,22 @@
+.error {
+  max-width: 358px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  height: 20px;
+  margin-bottom: 25px;
+}
+
+.error:last-of-type {
+  margin-bottom: 43px;
+}
+
+@media screen and (max-width: 768px) {
+  .error:last-of-type {
+    margin-bottom: 31px;
+  }
+  .error {
+    max-width: 200px;
+  }
+}

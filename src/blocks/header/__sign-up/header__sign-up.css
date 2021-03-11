@@ -1,0 +1,12 @@
+.header__sign-up {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  align-self: center;
+  cursor: pointer;
+}
+
+.header__sign-up:hover {
+  opacity: .6;
+}

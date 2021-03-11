@@ -1,0 +1,8 @@
+.card__btn-like_active {
+  background-image: url(../../../../images/heartBlack.svg);
+}
+
+.card__btn-like_active:hover {
+  transition: ease .3s;
+  opacity: .6;
+}

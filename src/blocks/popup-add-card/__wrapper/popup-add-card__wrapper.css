@@ -1,0 +1,5 @@
+.popup-add-card__wrapper {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}

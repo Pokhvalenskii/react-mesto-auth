@@ -1,0 +1,12 @@
+.popup-profile__wrapper {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+
+}
+
+@media screen and (max-width: 768px) {
+  .popup-profile__wrapper {
+    width: 282px;
+  }
+}

@@ -1,0 +1,8 @@
+.popup__btn-save_state_valid {
+  background-color: #000;
+}
+
+.popup__btn-save_state_valid:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transition: ease .2s;
+}

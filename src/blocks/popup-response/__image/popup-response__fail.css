@@ -1,0 +1,6 @@
+.popup-response__fail {
+  width: 120px;
+  height: 120px;
+  background-image: url(../../../images/Union_X.png);
+  margin: 26px 0 32px 0;
+}

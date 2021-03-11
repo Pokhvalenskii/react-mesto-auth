@@ -1,0 +1,25 @@
+.log-in__submit {
+  width: 358px;
+  height: 50px;
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  margin-top: 216px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .log-in__submit {
+    font-size: 14px;
+    line-height: 17px;
+    min-width: 200px;
+    width: 100%;
+    height: 40px;
+  }
+}

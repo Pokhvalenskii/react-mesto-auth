@@ -1,0 +1,17 @@
+.log-in__input {
+  background-color: black;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  outline:none;
+  border-bottom: 2px solid #ccc;
+  color: #ccc;
+  width: 100%;
+  /* padding-bottom: 13px; */
+  padding: 0 0 13px 0;
+}
+
+.log-in__input::placeholder {
+  color: #ccc;
+}

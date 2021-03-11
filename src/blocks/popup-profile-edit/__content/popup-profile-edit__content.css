@@ -1,0 +1,13 @@
+.popup-profile-edit__content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 36px 36px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup-profile-edit__content {
+    padding: 30px 20px;
+  }
+}
