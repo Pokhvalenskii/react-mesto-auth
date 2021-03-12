@@ -15,7 +15,7 @@ import Login from './Login.js';
 import Register from './Register.js';
 import PopupResponse from './PopupResponse.js';
 import * as auth from '../utils/auth.js';
-
+//eqwerqwer
 function App() {
   const history = useHistory();
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
