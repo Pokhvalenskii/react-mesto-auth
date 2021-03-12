@@ -10,10 +10,10 @@ import AddPlacePopup from './AddPlacePopup.js';
 import { useState, useEffect, useCallback } from 'react';
 import { Route, Switch, Redirect, BrowserRouter, useHistory } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute.js';
-
 import Login from './Login.js';
 import Register from './Register.js';
-import PopupResponse from './PopupResponse.js';
+import InfoTooltip from './InfoTooltip.js';
+
 import * as auth from '../utils/auth.js';
 //eqwerqwer
 function App() {
@@ -176,7 +176,7 @@ function App() {
         <Switch>
           <Route path='/sign-in'>
             <Login handleAuthorize={handleAuthorize}/>
-            <PopupResponse isOpen={isFailPopup} onClose={closeAllPopups}
+            <InfoTooltip isOpen={isFailPopup} onClose={closeAllPopups}
             name='popup-response'
             title='Что-то пошло не так!
             Попробуйте ещё раз.'
@@ -184,7 +184,7 @@ function App() {
           </Route>
           <Route path='/sign-up'>
             <Register handleRegister={handleRegister}/>
-            <PopupResponse isOpen={isSuccessPopup} onClose={closeAllPopups}
+            <InfoTooltip isOpen={isSuccessPopup} onClose={closeAllPopups}
             name='popup-response'
             title='Вы успешно зарегистрировались!'
             image='success'/>
@@ -193,7 +193,10 @@ function App() {
 
           <ProtectedRoute path='/' loggedIn={loggedIn} testProps={userEmail}>
             <div className='root'>
-              <Header userEmail={userEmail} logout={logout}/>
+              <Header>
+                <p className="header__email">{userEmail}</p>
+                <p className="header__sign-up" onClick={logout}>Выход</p>
+              </Header>
               <Main
               cards={cards}
               handleCardLike={handleCardLike}

@@ -2,6 +2,7 @@ import logo from '../images/logo.svg'
 import { Link, useHistory } from "react-router-dom";
 import InfoTooltip from './InfoTooltip.js';
 import { useState } from 'react';
+import Header from './Header.js'
 
 
 function Login(props) {
@@ -28,16 +29,13 @@ function Login(props) {
 
   return(
     <>
-      <header className="header">
-      <img className="header__logo-image" src={logo} alt="Mesto Логотип"></img>
-        <div className="header__wrapper">
-          <p className="header__sign-up" onClick={handlePushRegister}>Регистрация</p>
-        </div>
-      </header>
+      <Header>
+        <p className="header__sign-up" onClick={handlePushRegister}>Регистрация</p>
+      </Header>
       <form className="log-in" onSubmit={handleSubmit}>
         <h2 className="log-in__title">Вход</h2>
-        <input className="log-in__input" type="email" minLength="5" maxLength="40" placeholder="Email" required onChange={handleChandeUserEmail}/>
-        <input className="log-in__input" type="password" minLength="6" maxLength="40" placeholder="Пароль" required onChange={handleChandeUserPassword}/>
+        <input className="log-in__input" type="email" minLength="5" maxLength="40" placeholder="Email" required value={userEmail} onChange={handleChandeUserEmail}/>
+        <input className="log-in__input" type="password" minLength="6" maxLength="40" placeholder="Пароль" required value={userPassword} onChange={handleChandeUserPassword}/>
       <button className="log-in__submit" type="submit">Войти</button>
       </form>
       <InfoTooltip />
