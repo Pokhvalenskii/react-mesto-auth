@@ -119,17 +119,14 @@ function App() {
         closeAllPopups();
       }).catch(error => console.log(`${error}`))
   }
-
-  //////////////////////////////////////////
+///////////////////////////////////////////////////////////////
   const initialData = 'email';
-
   const [userEmail, setUserEmail] = useState('email');
   const [loggedIn, setLoggedIn] = useState(false);
 
   function handleRegister(email, password) {
     auth.register(email, password)
       .then(res => {
-        // console.log('RES: ', res)
         setUserEmail(email);
         setIsSuccessPopup(true)
       }).catch(error => console.log(`${error}`))
@@ -137,11 +134,9 @@ function App() {
   function handleAuthorize(email, password) {
     return auth.authorize(email, password)
       .then(res => {
-        // console.log('RES authorize: ', res.token)
         setLoggedIn(true);
         setUserEmail(email);
         localStorage.setItem('jwt', res.token);
-        // console.log('local storage ', localStorage.getItem('jwt'))
       }).catch(() => {
         setIsFailPopup(true);
       })
@@ -198,13 +193,13 @@ function App() {
                 <p className="header__sign-up" onClick={logout}>Выход</p>
               </Header>
               <Main
-              cards={cards}
-              handleCardLike={handleCardLike}
-              handleCardDelete={handleCardDelete}
-              handleCardClick={handleCardClick}
-              onAddPlace={handleAddPlaceClick}
-              onEditProfile={handleEditProfileClick}
-              onEditAvatar={handleEditAvatarClick}
+                cards={cards}
+                handleCardLike={handleCardLike}
+                handleCardDelete={handleCardDelete}
+                handleCardClick={handleCardClick}
+                onAddPlace={handleAddPlaceClick}
+                onEditProfile={handleEditProfileClick}
+                onEditAvatar={handleEditAvatarClick}
               />
               <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser}/>
               <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} updateAvatar={handleUpdateAvatar}/>

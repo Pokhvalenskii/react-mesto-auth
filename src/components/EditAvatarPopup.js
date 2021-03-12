@@ -17,7 +17,15 @@ function EditAvatarPopup(props) {
     isOpen={props.isOpen}
     onClose={props.onClose}
     onSubmit={handleSubmit}>
-      <input id="add-urle" className="popup__input popup__input_place_up" type="url" name="ImageLink" placeholder="Ссылка на картинку" required ref={urlRef}/>
+      <input
+        id="add-urle"
+        className="popup__input popup__input_place_up"
+        type="url"
+        name="ImageLink"
+        placeholder="Ссылка на картинку"
+        required
+        ref={urlRef}
+      />
       <span id="add-urle-error" className="error"></span>
       <button className="popup__btn-save popup__btn-save_state_valid" type="submit">Да</button>
     </PopupWithForm>
